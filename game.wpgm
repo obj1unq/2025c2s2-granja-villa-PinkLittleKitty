@@ -12,13 +12,13 @@ program farmville {
 	//  VISUALES
  	game.addVisualCharacter(personaje)
 
-	keyboard.m().onPressDo({personaje.intentarSembrar(new Maiz())})
-	keyboard.t().onPressDo({personaje.intentarSembrar(new Trigo())})
-	keyboard.o().onPressDo({personaje.intentarSembrar(new Tomaco())})
+	keyboard.m().onPressDo({personaje.tryPlant(new Maiz())})
+	keyboard.t().onPressDo({personaje.tryPlant(new Trigo())})
+	keyboard.o().onPressDo({personaje.tryPlant(new Tomaco())})
 
-	keyboard.r().onPressDo({personaje.intentarRegar()})
+	keyboard.r().onPressDo({personaje.tryWater()})
 
-	keyboard.c().onPressDo({personaje.cosechar()})
+	keyboard.c().onPressDo({personaje.harvest()})
 
  	//  COMIENZA
 	game.start()
