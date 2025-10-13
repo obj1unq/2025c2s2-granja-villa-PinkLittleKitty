@@ -20,6 +20,10 @@ program farmville {
 
 	keyboard.c().onPressDo({personaje.tryHarvest()})
 
+	keyboard.v().onPressDo({personaje.sell()})
+
+	keyboard.space().onPressDo({personaje.info()})
+
  	//  COMIENZA
 	game.start()
 }

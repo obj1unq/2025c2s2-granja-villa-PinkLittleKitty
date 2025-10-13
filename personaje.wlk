@@ -5,6 +5,7 @@ object personaje {
 	var property position = game.center()
 	const property image = "fplayer.png"
 	var property inventory = []
+	var gold = 0
 
 	method isCrop() {
 		return false
@@ -14,7 +15,6 @@ object personaje {
 		game.addVisual(planta)
 		planta.position(self.position())
 	}
-
 
 	method tryPlant(planta)
 	{
@@ -27,7 +27,7 @@ object personaje {
 			self.error("No se puede sembrar aquí")
 		}
 	}
-	
+
 	method water(_position) {
 		self.getCrops(_position).forEach({ c => c.water() })
 	}
@@ -56,5 +56,20 @@ object personaje {
 		} else {
 			self.error("No hay nada para cosechar")
 		}
+	}
+
+	method sell() {
+		var total = 0
+
+		self.inventory().forEach({ item =>
+			total += item.price()
+		})
+		gold += total
+		self.inventory().clear()
+		game.say(self, "Vendí todo por " + total + " de oro")
+	}
+
+	method info() {
+		game.say(self, "Oro: " + gold + " Inventario: " + self.inventory().size() + " items")
 	}
 }

@@ -33,6 +33,10 @@ class Maiz {
 			self.error("No está listo para cosechar")
 		}
 	}
+
+	method price() {
+		return 150
+	}
 }
 
 class Trigo {
@@ -67,6 +71,10 @@ class Trigo {
 			self.error("No está listo para cosechar")
 		}
 	}
+
+	method price() {
+		return (stage - 1) * 100
+	}
 }
 
 class Tomaco {
@@ -95,5 +103,9 @@ class Tomaco {
 	method tryHarvest() {
 		personaje.inventory().add(self)
 		game.removeVisual(self)
+	}
+
+	method price() {
+		return 80
 	}
 }
