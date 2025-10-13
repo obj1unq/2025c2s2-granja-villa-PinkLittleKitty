@@ -4,6 +4,7 @@ import cultivos.*
 object personaje {
 	var property position = game.center()
 	const property image = "fplayer.png"
+	var property inventory = []
 
 	method isCrop() {
 		return false
@@ -14,20 +15,19 @@ object personaje {
 		planta.position(self.position())
 	}
 
-	method tryPlant(planta) {
-		if (self.canPlant(self.position())) {
-			self.plant(planta)
-		}
-		else {
-			game.error("No se puede sembrar aquí")
-		}
-	}
 
-	method canPlant(_position)
+	method tryPlant(planta)
 	{
-		return game.getObjectsIn(_position).size() <= 1
+		self.canPlant()
+		self.plant(planta)
 	}
 
+	method canPlant() {
+		if (game.getObjectsIn(self.position()).size() > 1) {
+			self.error("No se puede sembrar aquí")
+		}
+	}
+	
 	method water(_position) {
 		self.getCrops(_position).forEach({ c => c.water() })
 	}
@@ -41,7 +41,7 @@ object personaje {
 			self.water(self.position())
 		}
 		else {
-			game.error("No tengo nada para regar")
+			self.error("No tengo nada para regar")
 		}
 	}
 
@@ -50,7 +50,11 @@ object personaje {
 		return self.getCrops(_position).size() > 0
 	}
 
-	method harvest() {
-		self.getCrops(self.position()).forEach({ c => c.tryHarvest() })
+	method tryHarvest() {
+		if (self.getCrops(self.position()).size() > 0) {
+			self.getCrops(self.position()).forEach({ c => c.tryHarvest() })
+		} else {
+			self.error("No hay nada para cosechar")
+		}
 	}
 }

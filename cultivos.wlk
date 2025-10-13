@@ -1,4 +1,5 @@
 import wollok.game.*
+import personaje.*
 
 class Maiz {
 	var property position = game.center()
@@ -20,7 +21,16 @@ class Maiz {
 		if (!watered) {
 			watered = true
 		} else {
-			game.error("No se puede regar más")
+			self.error("No se puede regar más")
+		}
+	}
+
+	method tryHarvest() {
+		if (watered) {
+			personaje.inventory().add(self)
+			game.removeVisual(self)
+		} else {
+			self.error("No está listo para cosechar")
 		}
 	}
 }
@@ -48,6 +58,15 @@ class Trigo {
 			stage = 0
 		}
 	}
+
+	method tryHarvest() {
+		if (stage >= 2) {
+			personaje.inventory().add(self)
+			game.removeVisual(self)
+		} else {
+			self.error("No está listo para cosechar")
+		}
+	}
 }
 
 class Tomaco {
@@ -62,10 +81,19 @@ class Tomaco {
 	}
 
 	method water() {
-		if (self.position().y() != game.height() - 1) {
+		if (self.position().y() != game.height() - 1 && self.canMove()) {
 			self.position(game.at(self.position().x(), self.position().y() + 1))
-		} else {
+		} else if (self.canMove()) {
 			self.position(game.at(self.position().x(), 0))
 		}
+	}
+
+	method canMove() {
+		return game.getObjectsIn(game.at(self.position().x(), self.position().y() + 1)).size() == 0
+	}
+
+	method tryHarvest() {
+		personaje.inventory().add(self)
+		game.removeVisual(self)
 	}
 }

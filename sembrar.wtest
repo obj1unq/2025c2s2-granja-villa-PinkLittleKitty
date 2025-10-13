@@ -1,0 +1,10 @@
+import wollok.game.*
+import personaje.*
+import cultivos.*
+
+describe "Personaje" {
+  test "Sembrar" {
+    personaje.tryPlant(new Maiz())
+    assert.throwsException({personaje.tryPlant(new Maiz())})
+  }
+}

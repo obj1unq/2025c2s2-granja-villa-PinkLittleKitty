@@ -18,7 +18,7 @@ program farmville {
 
 	keyboard.r().onPressDo({personaje.tryWater()})
 
-	keyboard.c().onPressDo({personaje.harvest()})
+	keyboard.c().onPressDo({personaje.tryHarvest()})
 
  	//  COMIENZA
 	game.start()
