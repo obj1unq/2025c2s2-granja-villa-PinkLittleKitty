@@ -72,4 +72,15 @@ object personaje {
 	method info() {
 		game.say(self, "Oro: " + gold + " Inventario: " + self.inventory().size() + " items")
 	}
+
+	method tryPlace(objeto) {
+		self.canPlant()
+		self.place(objeto)
+	}
+
+	method place(objeto) {
+		game.addVisual(objeto)
+		objeto.position(self.position())
+		objeto.setup()
+	}
 }

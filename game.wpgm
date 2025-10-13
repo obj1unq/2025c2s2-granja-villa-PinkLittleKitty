@@ -1,6 +1,7 @@
 import wollok.game.*
 import personaje.*
 import cultivos.*
+import aspersor.*
 
 program farmville {
 	//  CONFIG	
@@ -23,6 +24,8 @@ program farmville {
 	keyboard.v().onPressDo({personaje.sell()})
 
 	keyboard.space().onPressDo({personaje.info()})
+
+	keyboard.a().onPressDo({personaje.tryPlace(new Sprinkler())})
 
  	//  COMIENZA
 	game.start()
