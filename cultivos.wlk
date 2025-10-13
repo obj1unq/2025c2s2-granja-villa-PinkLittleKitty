@@ -2,23 +2,23 @@ import wollok.game.*
 
 class Maiz {
 	var property position = game.center()
-	var regado = false
+	var watered = false
 
-	method isCultivo() {
+	method isCrop() {
 		return true
 	}
 
 	method image() {
-		if (regado) {
+		if (watered) {
 			return "corn_adult.png"
 		} else {
 			return "corn_baby.png"
 		}
 	}
 
-	method regar() {
-		if (!regado) {
-			regado = true
+	method water() {
+		if (!watered) {
+			watered = true
 		} else {
 			game.error("No se puede regar más")
 		}
@@ -27,25 +27,25 @@ class Maiz {
 
 class Trigo {
 	var property position = game.center()
-	var etapa = 0
+	var stage = 0
 
-	method isCultivo() {
+	method isCrop() {
 		return true
 	}
 
 	method image() {
-		return "wheat_" + etapa + ".png"
+		return "wheat_" + stage + ".png"
 	}
 
-	method regar() {
-		self.siguienteEtapa()
+	method water() {
+		self.nextStage()
 	}
 
-	method siguienteEtapa() {
-		if (etapa < 3) {
-			etapa = etapa + 1
+	method nextStage() {
+		if (stage < 3) {
+			stage = stage + 1
 		} else {
-			etapa = 0
+			stage = 0
 		}
 	}
 }
@@ -53,7 +53,7 @@ class Trigo {
 class Tomaco {
 	var property position = game.center()
 
-	method isCultivo() {
+	method isCrop() {
 		return true
 	}
 
@@ -61,7 +61,7 @@ class Tomaco {
 		return "tomaco.png"
 	}
 
-	method regar() {
+	method water() {
 		if (self.position().y() != game.height() - 1) {
 			self.position(game.at(self.position().x(), self.position().y() + 1))
 		} else {

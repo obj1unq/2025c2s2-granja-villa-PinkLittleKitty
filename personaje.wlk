@@ -5,7 +5,7 @@ object personaje {
 	var property position = game.center()
 	const property image = "fplayer.png"
 
-	method isCultivo() {
+	method isCrop() {
 		return false
 	}
 
@@ -29,11 +29,11 @@ object personaje {
 	}
 
 	method water(_position) {
-		self.getCultivos(_position).forEach({ c => c.regar() })
+		self.getCrops(_position).forEach({ c => c.water() })
 	}
 
-	method getCultivos(_position) {
-		return game.getObjectsIn(_position).filter({obj => obj.isCultivo()})
+	method getCrops(_position) {
+		return game.getObjectsIn(_position).filter({obj => obj.isCrop()})
 	}
 
 	method tryWater() {
@@ -47,10 +47,10 @@ object personaje {
 
 	method canWater(_position)
 	{
-		return self.getCultivos(_position).size() > 0
+		return self.getCrops(_position).size() > 0
 	}
 
 	method harvest() {
-		self.getCultivos(self.position()).forEach({ c => c.tryHarvest() })
+		self.getCrops(self.position()).forEach({ c => c.tryHarvest() })
 	}
 }
