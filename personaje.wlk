@@ -11,6 +11,10 @@ object personaje {
 		return false
 	}
 
+	method isMarket() {
+        return false
+    }
+
 	method plant(planta) {
 		game.addVisual(planta)
 		planta.position(self.position())
@@ -59,14 +63,21 @@ object personaje {
 	}
 
 	method trySell() {
-		var total = 0
+		if (game.getObjectsIn(position).filter({ o => o.isMarket() }).size() > 0) {
+			self.sell()
+		} else {
+			self.error("No estoy en el mercado")
+		}
+	}
 
-		self.inventory().forEach({ item =>
-			total += item.price()
-		})
-		gold += total
-		self.inventory().clear()
-		game.say(self, "Vendí todo por " + total + " de oro")
+	method sell() {
+		const market = game.getObjectsIn(position).filter({ o => o.isMarket() })[0]
+		const cropsToSell = self.inventory().filter({ item => item.isCrop() })
+		if (cropsToSell.size() > 0) {
+			market.first().buy(cropsToSell)
+		} else {
+			self.error("No tengo nada para vender")
+		}
 	}
 
 	method info() {

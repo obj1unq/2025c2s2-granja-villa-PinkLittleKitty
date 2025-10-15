@@ -9,6 +9,10 @@ class Maiz {
 		return true
 	}
 
+	method isMarket() {
+        return false
+    }
+
 	method image() {
 		if (watered) {
 			return "corn_adult.png"
@@ -47,6 +51,10 @@ class Trigo {
 		return true
 	}
 
+	method isMarket() {
+        return false
+    }
+
 	method image() {
 		return "wheat_" + stage + ".png"
 	}
@@ -83,6 +91,10 @@ class Tomaco {
 	method isCrop() {
 		return true
 	}
+
+	method isMarket() {
+        return false
+    }
 
 	method image() {
 		return "tomaco.png"

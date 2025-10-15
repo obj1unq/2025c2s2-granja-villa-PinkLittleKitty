@@ -27,6 +27,9 @@ program farmville {
 
 	keyboard.a().onPressDo({personaje.tryPlace(new Sprinkler())})
 
+	game.addVisual(new Mercado(position = game.at(9,9)))
+	game.addVisual(new Mercado(position = game.at(0,9)))
+
  	//  COMIENZA
 	game.start()
 }

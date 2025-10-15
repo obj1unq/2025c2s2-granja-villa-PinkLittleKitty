@@ -10,6 +10,10 @@ class Sprinkler {
         return false
     }
 
+    method isMarket() {
+        return false
+    }
+
     method water() {
         const directions = self.getDirections()
         const crops = self.cropsIn(directions)
@@ -39,13 +43,17 @@ class Sprinkler {
 }
 
 class Mercado {
-    var property position = game.at(0, 0)
+    var property position
     const property image = "market.png"
     var property gold = 1000
     var property inventory = []
 
     method isCrop() {
         return false
+    }
+
+    method isMarket() {
+        return true
     }
 
     method buy(cropList) {
