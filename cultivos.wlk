@@ -24,8 +24,6 @@ class Maiz {
 	method water() {
 		if (!watered) {
 			watered = true
-		} else {
-			self.error("No se puede regar más")
 		}
 	}
 

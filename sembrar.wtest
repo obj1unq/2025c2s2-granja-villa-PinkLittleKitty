@@ -1,6 +1,8 @@
 import wollok.game.*
 import personaje.*
 import cultivos.*
+import bonus.*
+import directions.*
 
 describe "Personaje" {
 
@@ -34,7 +36,7 @@ describe "Personaje" {
     assert.that(!game.getObjectsIn(pos).contains(maiz))
   }
 
-  test "Vender" { // Sólo assert que falla porque falta un mercado tras el bonus
+  test "Vender" {
     assert.that(personaje.gold() == 0)
     const maiz = new Maiz()
     personaje.tryPlant(maiz)
@@ -42,5 +44,27 @@ describe "Personaje" {
     personaje.tryHarvest()
     assert.that(personaje.inventory().size() == 1)
     assert.throwsException({personaje.trySell()})
+    game.addVisual(new Mercado(position = norte.siguiente(personaje.position())))
+    personaje.position(norte.siguiente(personaje.position()))
+    personaje.trySell()
+    assert.that(personaje.inventory().isEmpty())
+  }
+
+  test "aspersores" {
+    const aspersor = new Sprinkler()
+    aspersor.position(personaje.position())
+    game.addVisual(aspersor)
+    const maiz1 = new Maiz()
+    const maiz2 = new Maiz()
+    personaje.position(sur.siguiente(personaje.position()))
+    personaje.tryPlant(maiz1)
+    personaje.position(norte.siguiente(personaje.position()))
+    personaje.position(norte.siguiente(personaje.position()))
+    personaje.tryPlant(maiz2)
+    assert.that(!maiz1.watered())
+    assert.that(!maiz2.watered())
+    aspersor.water()
+    assert.that(maiz1.watered())
+    assert.that(maiz2.watered())
   }
 }
