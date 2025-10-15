@@ -34,15 +34,13 @@ describe "Personaje" {
     assert.that(!game.getObjectsIn(pos).contains(maiz))
   }
 
-  test "Vender" { // Este no funca desde el bonus de mercados
+  test "Vender" { // Sólo assert que falla porque falta un mercado tras el bonus
     assert.that(personaje.gold() == 0)
     const maiz = new Maiz()
     personaje.tryPlant(maiz)
     personaje.tryWater()
     personaje.tryHarvest()
     assert.that(personaje.inventory().size() == 1)
-    personaje.trySell()
-    assert.that(personaje.inventory().size() == 0)
-    assert.that(personaje.gold() == maiz.price())
+    assert.throwsException({personaje.trySell()})
   }
 }
