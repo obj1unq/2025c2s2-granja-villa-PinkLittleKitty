@@ -37,3 +37,31 @@ class Sprinkler {
         game.onTick(1000, "aspersor", { self.water() })
     }
 }
+
+class Mercado {
+    var property position = game.at(0, 0)
+    const property image = "market.png"
+    var property gold = 1000
+    var property inventory = []
+
+    method isCrop() {
+        return false
+    }
+
+    method buy(cropList) {
+        self.canBuy(cropList)
+        cropList.forEach({ crop =>
+            personaje.inventory().remove(crop)
+            personaje.gold(personaje.gold() + crop.price())
+            self.inventory().add(crop)
+            self.gold(self.gold() - crop.price())
+            })
+    }
+
+    method canBuy(cropList) {
+        const totalPrice = cropList.map({ c => c.price() }).sum()
+        if (totalPrice > self.gold()) {
+            self.error("No tengo suficiente oro")
+        }
+    }
+}

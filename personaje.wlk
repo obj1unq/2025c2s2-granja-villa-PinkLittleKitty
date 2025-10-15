@@ -5,7 +5,7 @@ object personaje {
 	var property position = game.center()
 	const property image = "fplayer.png"
 	var property inventory = []
-	var gold = 0
+	var property gold = 0
 
 	method isCrop() {
 		return false
@@ -58,7 +58,7 @@ object personaje {
 		}
 	}
 
-	method sell() {
+	method trySell() {
 		var total = 0
 
 		self.inventory().forEach({ item =>

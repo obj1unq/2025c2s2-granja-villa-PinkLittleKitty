@@ -3,8 +3,46 @@ import personaje.*
 import cultivos.*
 
 describe "Personaje" {
+
+  method initialize() {
+    game.clear()
+    game.addVisualCharacter(personaje)
+  }
+
   test "Sembrar" {
     personaje.tryPlant(new Maiz())
     assert.throwsException({personaje.tryPlant(new Maiz())})
+  }
+
+  test "Regar" {
+    const pos = personaje.position()
+    assert.throwsException({personaje.tryWater()})
+    personaje.tryPlant(new Maiz())
+    personaje.tryWater()
+    personaje.getCrops(pos).forEach({ c => assert.that(c.watered()) })
+  }
+
+  test "Cosechar" {
+    const pos = personaje.position()
+    assert.throwsException({personaje.tryHarvest()})
+    const maiz = new Maiz()
+    personaje.tryPlant(maiz)
+    assert.throwsException({personaje.tryHarvest()})
+    personaje.tryWater()
+    personaje.tryHarvest()
+    assert.that(personaje.inventory().contains(maiz))
+    assert.that(!game.getObjectsIn(pos).contains(maiz))
+  }
+
+  test "Vender" {
+    assert.that(personaje.gold() == 0)
+    const maiz = new Maiz()
+    personaje.tryPlant(maiz)
+    personaje.tryWater()
+    personaje.tryHarvest()
+    assert.that(personaje.inventory().size() == 1)
+    personaje.trySell()
+    assert.that(personaje.inventory().size() == 0)
+    assert.that(personaje.gold() == maiz.price())
   }
 }

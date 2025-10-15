@@ -1,7 +1,7 @@
 import wollok.game.*
 import personaje.*
 import cultivos.*
-import aspersor.*
+import bonus.*
 
 program farmville {
 	//  CONFIG	
@@ -21,7 +21,7 @@ program farmville {
 
 	keyboard.c().onPressDo({personaje.tryHarvest()})
 
-	keyboard.v().onPressDo({personaje.sell()})
+	keyboard.v().onPressDo({personaje.trySell()})
 
 	keyboard.space().onPressDo({personaje.info()})
 

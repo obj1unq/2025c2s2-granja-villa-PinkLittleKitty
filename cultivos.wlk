@@ -3,7 +3,7 @@ import personaje.*
 
 class Maiz {
 	var property position = game.center()
-	var watered = false
+	var property watered = false
 
 	method isCrop() {
 		return true
