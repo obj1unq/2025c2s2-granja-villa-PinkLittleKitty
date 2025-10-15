@@ -34,7 +34,7 @@ describe "Personaje" {
     assert.that(!game.getObjectsIn(pos).contains(maiz))
   }
 
-  test "Vender" {
+  test "Vender" { // Este no funca desde el bonus de mercados
     assert.that(personaje.gold() == 0)
     const maiz = new Maiz()
     personaje.tryPlant(maiz)

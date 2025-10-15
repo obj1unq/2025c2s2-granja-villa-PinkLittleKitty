@@ -42,3 +42,40 @@
 {"exitCode":"SIGINT","level":"info","message":"👾 Game executed game.farmville on /home/santiago/Documents/GitHub/2025c2s2-granja-villa-PinkLittleKitty","timeElapsed":137536,"timestamp":"2025-10-15T12:36:49.822Z"}
 {"level":"info","message":"🚀 Program executed \u001b[3m\u001b[34mgame.farmville\u001b[39m\u001b[23m on \u001b[3m\u001b[34m/home/santiago/Documents/GitHub/2025c2s2-granja-villa-PinkLittleKitty\u001b[39m\u001b[23m","ok":true,"timeElapsed":462,"timestamp":"2025-10-15T12:37:00.201Z"}
 {"exitCode":"SIGINT","level":"info","message":"👾 Game executed game.farmville on /home/santiago/Documents/GitHub/2025c2s2-granja-villa-PinkLittleKitty","timeElapsed":52992,"timestamp":"2025-10-15T12:37:52.731Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":107,"timestamp":"2025-10-15T12:38:34.084Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":126,"timestamp":"2025-10-15T12:38:34.739Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":110,"timestamp":"2025-10-15T12:38:34.925Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":103,"timestamp":"2025-10-15T12:38:36.059Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":119,"timestamp":"2025-10-15T12:38:36.253Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":104,"timestamp":"2025-10-15T12:38:36.468Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":107,"timestamp":"2025-10-15T12:38:36.575Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":103,"timestamp":"2025-10-15T12:38:36.686Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":108,"timestamp":"2025-10-15T12:38:37.106Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":117,"timestamp":"2025-10-15T12:38:38.127Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":107,"timestamp":"2025-10-15T12:38:38.435Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":102,"timestamp":"2025-10-15T12:38:38.604Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":143,"timestamp":"2025-10-15T12:38:38.824Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":107,"timestamp":"2025-10-15T12:38:39.288Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":104,"timestamp":"2025-10-15T12:38:39.966Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":107,"timestamp":"2025-10-15T12:38:40.172Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":114,"timestamp":"2025-10-15T12:38:40.288Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":128,"timestamp":"2025-10-15T12:38:40.416Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":108,"timestamp":"2025-10-15T12:38:40.604Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":104,"timestamp":"2025-10-15T12:38:40.874Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":104,"timestamp":"2025-10-15T12:38:41.135Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":101,"timestamp":"2025-10-15T12:38:41.307Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":104,"timestamp":"2025-10-15T12:38:41.573Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":216,"timestamp":"2025-10-15T12:38:41.789Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":124,"timestamp":"2025-10-15T12:38:43.431Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":112,"timestamp":"2025-10-15T12:38:43.612Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":162,"timestamp":"2025-10-15T12:38:44.936Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":103,"timestamp":"2025-10-15T12:38:45.601Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":141,"timestamp":"2025-10-15T12:38:46.017Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":133,"timestamp":"2025-10-15T12:38:46.150Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":103,"timestamp":"2025-10-15T12:38:46.253Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":101,"timestamp":"2025-10-15T12:38:46.665Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":104,"timestamp":"2025-10-15T12:38:46.777Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":109,"timestamp":"2025-10-15T12:38:46.886Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":106,"timestamp":"2025-10-15T12:38:46.994Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":115,"timestamp":"2025-10-15T12:38:47.169Z"}
+{"level":"info","message":"⌛ Validating sembrar.wtest","timeElapsed":128,"timestamp":"2025-10-15T12:38:47.780Z"}
